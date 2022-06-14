@@ -11,6 +11,23 @@ const {
 //Mongoose Models
 const Project = require("../models/Project");
 const Client = require("../models/Client");
+const Journal = require("../models/Journal");
+
+// Journal Type
+const JournalType = new GraphQLObjectType({
+  name: "Journal",
+  fields: () => ({
+    id: {
+      type: GraphQLID,
+    },
+    entry: {
+      type: GraphQLString,
+    },
+    date: {
+      type: GraphQLString,
+    },
+  }),
+});
 
 // Project Type
 const ProjectType = new GraphQLObjectType({
@@ -69,6 +86,19 @@ const RootQuery = new GraphQLObjectType({
         return Client.findById(args.id);
       },
     },
+    journals: {
+      type: new GraphQLList(JournalType),
+      resolve(parent, args) {
+        return Journal.find();
+      },
+    },
+    journal: {
+      type: JournalType,
+      args: { id: { type: GraphQLID } },
+      resolve(parent, args) {
+        return Journal.findById(args.id);
+      },
+    },
   },
 });
 
@@ -76,6 +106,34 @@ const RootQuery = new GraphQLObjectType({
 const mutation = new GraphQLObjectType({
   name: "Mutation",
   fields: {
+    // new Journal
+
+    addJournal: {
+      type: JournalType,
+      args: {
+        entry: { type: new GraphQLNonNull(GraphQLString) },
+        date: { type: new GraphQLNonNull(GraphQLString) },
+      },
+      resolve(parent, args) {
+        let journal = new Journal({
+          entry: args.entry,
+          date: args.date,
+        });
+        return journal.save();
+      },
+    },
+
+    // delete Journal
+    deleteJournal: {
+      type: JournalType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLID) },
+      },
+      resolve(parent, args) {
+        return Journal.findByIdAndRemove(args.id);
+      },
+    },
+
     // saving new client into database
     addClient: {
       type: ClientType,

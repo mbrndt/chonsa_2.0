@@ -15,7 +15,7 @@
 .formControl {
   width: 100%;
   margin-bottom: 10px;
-  border: 0.2rem solid #e8e9f1;
+  border: 0.2rem solid var(--colour_2);
   border-radius: 0.4rem;
 }
 
@@ -24,7 +24,7 @@
 }
 
 button {
-  background-color: #e8e9f1;
+  background-color: var(--colour_1);
   color: #343a40;
   border: none;
   border-radius: 5px;

@@ -1,18 +1,35 @@
+/* colour variables for changing colour aesthetics */
+
+/* lavender colour aesthetics */
+:root {
+  --colour_1: #f1e8ef;
+  --colour_2: #e8e9f1;
+  --colour_3: #cbd0e7;
+  --colour_4: #e8e9f1;
+}
+
+/* white colour aesthetics */
+body[data-theme="translucent-theme"] {
+  --colour_1: #fcfcfc;
+  --colour_2: #e9ecef;
+  --colour_3: #f8f9fa;
+  --colour_4: #f1f3f4;
+}
+
+/*  earth colour aesthetics */
+body[data-theme="earth-theme"] {
+  --colour_1: #dbdbd1;
+  --colour_2: #f6ede8;
+  --colour_3: #c1c0af;
+  --colour_4: #ddbea9;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Playfair+Display:wght@900&display=swap");
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.navbar-brand {
-  color: #df3ca6;
 }
 
 .navbar-brand img {

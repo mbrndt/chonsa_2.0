@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const JournalSchema = new mongoose.Schema({
-  entry: {
+  title: {
     type: String,
   },
-  date: {
-    type: Date,
+  content: {
+    type: String,
   },
 });
 

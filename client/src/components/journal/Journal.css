@@ -1,0 +1,36 @@
+.journalContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  width: auto;
+}
+
+#journalForm {
+  margin-right: 5%;
+  width: 50%;
+  height: 50%;
+}
+
+.formControl {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 0.2rem solid #e8e9f1;
+  border-radius: 0.4rem;
+}
+
+#contentTextArea {
+  height: 200px;
+}
+
+button {
+  background-color: #e8e9f1;
+  color: #343a40;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  width: 100%;
+}

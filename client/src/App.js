@@ -1,18 +1,14 @@
-import Header from "./components/Header";
+import Header from "./components/header/index";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import Clients from "./components/Clients";
-import Journal from "./components/Journal";
+import Journal from "./components/journal";
 
 const cache = new InMemoryCache({
   typePolicy: {
     Query: {
       fields: {
-        clients: {
+        journals: {
           merge: (existing, incoming) => incoming,
         },
-      },
-      projects: {
-        merge: (existing, incoming) => incoming,
       },
     },
   },
@@ -20,7 +16,7 @@ const cache = new InMemoryCache({
 
 const client = new ApolloClient({
   uri: "http://localhost:5000/graphql",
-  cache: new InMemoryCache(),
+  cache,
 });
 
 function App() {
@@ -28,8 +24,7 @@ function App() {
     <>
       <ApolloProvider client={client}>
         <Header />
-        <div className="App">
-          <Clients />
+        <div className="container">
           <Journal />
         </div>
       </ApolloProvider>

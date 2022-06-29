@@ -1,3 +1,22 @@
+//Journal
+const journals = [
+  {
+    id: "1",
+    title: "Journal 1",
+    content: "This is the content of journal 1",
+  },
+  {
+    id: "2",
+    title: "Journal 2",
+    content: "This is the content of journal 2",
+  },
+  {
+    id: "3",
+    title: "Journal 3",
+    content: "This is the content of journal 3",
+  },
+];
+
 // Projects
 const projects = [
   {
@@ -76,4 +95,4 @@ const clients = [
   },
 ];
 
-module.exports = { projects, clients };
+module.exports = { journals, projects, clients };

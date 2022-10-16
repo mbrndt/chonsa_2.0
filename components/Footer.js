@@ -3,7 +3,7 @@ import { AiFillLinkedin, AiFillGithub, AiFillYoutube } from "react-icons/ai";
 
 function Footer() {
   return (
-    <div className="flex justify-between bg-lilacDark items-center">
+    <div className="flex justify-between bg-lavenderDark items-center">
       <div className="flex justify-start items-center ml-10">
         <a
           className="px-4 py-2 rounded-md ml-2"

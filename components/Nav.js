@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Nav() {
   return (
-    <nav className="py-5 flex justify-between bg-lilacBg min-w-screen">
+    <nav className="py-5 flex justify-between bg-lavenderBg min-w-screen">
       <Link href="/">
         <button className=" pl-72 text-3xl font-josefin font-medium">
           chonsa

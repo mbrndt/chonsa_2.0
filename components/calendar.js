@@ -7,9 +7,9 @@ export default function CalendarCom() {
   const [value, onChange] = useState(new Date());
 
   return (
-    <div className="bg-lilacBg items-center justify-center ">
+    <div className="items-center justify-center mb-28 ">
       <h1>calendar </h1>
-      <div className="justify-center flex bg-lilacBg">
+      <div className="justify-center flex mb-5">
         <Calendar onChange={onChange} value={value} />
       </div>
     </div>

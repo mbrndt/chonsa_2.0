@@ -6,8 +6,8 @@ module.exports = {
   ],
   theme: {
     colors: {
-      lilacBg: "#E8E9F1",
-      lilacDark: "#B1B7D1",
+      lavenderBg: "#E8E9F1",
+      lavenderDark: "#B1B7D1",
     },
     extend: {
       fontFamily: {

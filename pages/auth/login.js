@@ -19,22 +19,14 @@ export default function Login() {
     }
   };
 
-  useEffect(() => {
-    if (user) {
-      route.push("/");
-    } else {
-      console.log("login");
-    }
-  }, [user]);
-
   return (
-    <div className="shadow-xl mt-32 p-10 text-gray-700 rounded-lg">
+    <div className="shadow-xl mt-32 mx-10 p-10 text-gray-700 rounded-lg">
       <h2 className="text-2xl font-medium">Join Today</h2>
       <div className="py-4">
         <h3 className="py-4">Sign in with one of the providers</h3>
         <button
           onClick={GoogleLogin}
-          className="text-white bg-gray-700 w-full font-medium rounded-lg flex align-middle p-4 gap-2"
+          className="text-white bg-lavenderDark font-medium rounded-lg flex align-middle p-4 gap-2 w-auto"
         >
           <FcGoogle className="text-2xl" />
           Sign in with Google

@@ -11,9 +11,21 @@ import Image from "next/image";
 import Pomodoro from "../components/pomodoro";
 import { auth } from "../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Landing from "./landing";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [user, loading] = useAuthState(auth);
+  const route = useRouter();
+
+  useEffect(() => {
+    if (!user) {
+      route.push("/auth/login");
+    } else {
+      console.log("login");
+    }
+  }, [user]);
   return (
     <div>
       <Head>

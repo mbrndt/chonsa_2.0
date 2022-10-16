@@ -9,8 +9,11 @@ import MoodTracker from "../components/moodTracker";
 import WaterTracker from "../components/waterTracker";
 import Image from "next/image";
 import Pomodoro from "../components/pomodoro";
+import { auth } from "../utils/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Home() {
+  const [user, loading] = useAuthState(auth);
   return (
     <div>
       <Head>

@@ -1,7 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import { auth } from "../utils/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+
+import Journal from "../pages/journal";
 
 export default function Nav() {
+  const [user, loading] = useAuthState(auth);
+
   return (
     <nav className="py-5 flex justify-between bg-lavenderBg min-w-screen">
       <Link href="/">
@@ -11,13 +17,30 @@ export default function Nav() {
       </Link>
 
       <ul className="flex items-center gap-5 pr-16">
-        <button>change theme</button>
-        <Link href="/auth/login">
-          <a className="py-2 px-4  bg-cyan-500 text-white rounded-lg font-medium ml-8">
-            sign in
-          </a>
-        </Link>
-        <button>menu</button>
+        {!user && (
+          <Link href="/auth/login">
+            <a className="py-2 px-4  bg-cyan-500 text-white rounded-lg font-medium ml-8">
+              sign in
+            </a>
+          </Link>
+        )}
+
+        {user && (
+          <div className="flex items-center gap-5 pr-16">
+            <Link href={"/journal"}>
+              <button>journal</button>
+            </Link>
+            <button>change theme</button>
+            <img
+              className="w-12 rounded-full"
+              src={user.photoURL}
+              alt="user photo"
+            />
+            <button onClick={() => auth.signOut()}>sign out</button>
+
+            <button>menu</button>
+          </div>
+        )}
       </ul>
     </nav>
   );

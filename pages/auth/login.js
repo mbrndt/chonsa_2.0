@@ -19,6 +19,14 @@ export default function Login() {
     }
   };
 
+  useEffect(() => {
+    if (user) {
+      route.push("/");
+    } else {
+      console.log("login");
+    }
+  }, [user]);
+
   return (
     <div className="shadow-xl mt-32 mx-10 p-10 text-gray-700 rounded-lg">
       <h2 className="text-2xl font-medium">Join Today</h2>

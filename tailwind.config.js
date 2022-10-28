@@ -8,6 +8,8 @@ module.exports = {
     colors: {
       lavenderBg: "#E8E9F1",
       lavenderDark: "#B1B7D1",
+      red: "#F25F5C",
+      white: "#FFFFFF",
     },
     extend: {
       fontFamily: {

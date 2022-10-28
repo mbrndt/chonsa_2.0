@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Calendar from "../components/calendar";
-import Journal from "../components/journal";
-import Taskbox from "../components/taskbox";
+import Journal from "../pages/journal";
+import Taskbox from "../components/taskbox/taskbox";
 import lavender1 from "../utils/images/lavender1.png";
 import lavender2 from "../utils/images/lavender2.png";
 import Collections from "../components/collections";
@@ -39,8 +39,9 @@ export default function Home() {
       <main id="home" className=" px-10:px-20 lg:px-40">
         <section className="min-h-screen mt-5">
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-nowrap">
-            <div className=" basis-1/4 flex-1 text-center  p-10 rounded-xl my-10 bg-lavenderBg">
+            <div className="basis-1/4 flex-1 text-center  p-10 rounded-xl my-10 bg-lavenderBg">
               <Calendar />
+
               <Journal />
             </div>
             <div className="basis-1/4 flex-1 text-center p-10 rounded-xl my-10 bg-neutral-100 bg-lavenderBg">

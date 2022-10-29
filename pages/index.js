@@ -38,10 +38,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main id="home" className=" px-10:px-20 lg:px-40">
+      <main id="home" className="px-10 md:px-20 lg:px-40">
         <section className="min-h-screen mt-5">
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-nowrap">
-            <div className="basis-1/4 flex-1 text-center  p-10 rounded-xl my-10 bg-lavenderBg">
+            <div className="basis-1/4 flex-1 text-center  p-10 rounded-xl my-10 bg-lavenderDark">
               <Calendar />
               <Journal_Comp />
             </div>

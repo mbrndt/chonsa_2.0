@@ -28,86 +28,72 @@ export default function Login() {
   }, [user]);
 
   return (
-    <div className="shadow-xl mt-12 mx-10 p-10 text-gray-700 rounded-lg flex-col flex items-center">
+    <div className="shadow-xl mt-12 mb-20 mx-10 p-10 text-gray-700 rounded-lg flex-col flex items-center min-h-screen bg-opacity-60 backdrop-filter backdrop-blur-lg ">
       {/* <div className="flex flex-col items-center justify-center min-h-screen py-2 -mt-20 px-14 text-center"> */}
       <h1 className="text-2xl font-bold text-center mb-20">
         Welcome to Chonsa, your new favourite online bullet journal!
       </h1>
+      <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-nowrap">
+        {/* sign in */}
+        <div className="bg-lavenderLg max-w-lg mt-8 p-8 shadow-md lg:px-44 rounded-lg basis-1/2 flex-1 bg-opacity-60 backdrop-filter backdrop-blur-lg">
+          <p className="text-center text-xl pb-6">Sign In</p>
+          <form action="" className="flex-row ">
+            <p className="pt-2 pb-1">email:</p>
+            <input
+              type="text"
+              id="email"
+              placeholder="email"
+              rounded-sm
+              border-solid
+              className="pl-2"
+            />
+            <p className="pb-1 pt-4">password:</p>
+            <input
+              type="password"
+              id="password"
+              placeholder="password"
+              className="pl-2"
+            />
 
-      {/* sign in */}
-      <div className="bg-lavenderLg pl-40 pr-40 pt-5 shadow-md">
-        <p className="text-center">Sign In</p>
-        <form action="" className="flex-row ">
-          <p className="pt-2 pb-1">email:</p>
-          <input
-            type="text"
-            id="email"
-            placeholder="email"
-            rounded-sm
-            border-solid
-          />
-          <p className="pb-1 pt-4">password:</p>
-          <input type="password" id="password" placeholder="password" />
-        </form>
-        <div className="text-graysoft">
-          {" "}
+            <button className="underline text-xs text-right flex pl-16 pt-2">
+              forgot password?
+            </button>
+
+            <button className="mt-8 w-40 bg-lavenderBg rounded-lg shadow-sm hover:text-graydark">
+              login
+            </button>
+          </form>
+
+          <div className="text-graysoft">
+            {" "}
+            <button
+              onClick={GoogleLogin}
+              className="rounded-lg -ml-4 flex mt-14 mb-4 text-graydark hover:text-graysoft"
+            >
+              {" "}
+              or login using these:
+              <FcGoogle className="text-2xl ml-2" />
+            </button>
+          </div>
+        </div>
+
+        {/* sign up */}
+        <div className="bg-blueLg max-w-lg mt-10 p-10 pb28 shadow-md rounded-lg basis-1/2 flex-1 bg-opacity-60 backdrop-filter backdrop-blur-lg">
+          <p className="mt-4 text-center text-xl pb-6">Sign Up</p>
+
+          <button className="w-80 p-2 bg-white rounded-lg shadow-sm hover:text-lavenderDark bg-opacity-60 backdrop-filter backdrop-blur-lg">
+            create new account with your email address
+          </button>
           <button
             onClick={GoogleLogin}
-            className="font-medium rounded-lg flex mt-4 mb-4 text-graydark hover:text-lavenderDark"
+            className="rounded-lg flex mt-10 ml-14 mb-4 text-graydark hover:text-lavenderDark"
           >
             {" "}
-            or using these:
+            or sign up using these:
             <FcGoogle className="text-2xl ml-2" />
           </button>
         </div>
       </div>
-
-      {/* sign up */}
-      <div className="bg-blueLg max-w-lg mt-10 p-10 shadow-md">
-        <p className="mt-4 pb-2 text-center">Sign Up</p>
-        <p className="p-4">
-          ... oh, are you new here?{" "}
-          <button className="ml-14 w-40 p-2 bg-lavenderBg rounded-lg shadow-sm hover:text-lavenderDark">
-            create new account
-          </button>
-        </p>
-      </div>
-
-      {/* <div className="">
-        <div className="py-4 flex shadow-sm rounded-lg flex-col max-w-md ">
-          <div className="bg-lavenderLg">
-            <h2 className="py-4 mr-10">Sign In </h2>
-            <form action="" className="flex-col flex gap-7">
-              <div className="flex gap-20 ml-4">
-                <p>e-mail: </p>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Email"
-                  className="py-2 px-4 border-1 "
-                />
-              </div>
-              <div className="flex gap-14 ml-4">
-                <p className="">password: </p>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Password"
-                  className="py-2 px-4 border-1 "
-                />
-              </div>
-              <button className="text-xs justify-end flex mr-4 mb-4">
-                forgot password?
-              </button>
-            </form>
-            <button type="submit" className="">
-              log in
-            </button>
-          </div>
-         
-        </div> */}
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { auth } from "../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import Journal from "../pages/journal";
+import Image from "next/image";
 
 export default function Nav() {
   const [user, loading] = useAuthState(auth);
@@ -11,8 +12,8 @@ export default function Nav() {
   return (
     <nav className="py-5 flex justify-between bg-lavenderBg min-w-screen">
       <Link href="/">
-        <button className=" pl-72 text-3xl font-josefin font-medium">
-          chonsa
+        <button className=" pl-72 text-3xl font-josefin font-medium flex">
+          chonsa{" "}
         </button>
       </Link>
 

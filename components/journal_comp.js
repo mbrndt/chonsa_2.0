@@ -10,6 +10,7 @@ export default function Journal_Comp() {
   //login
   const [user, loading] = useAuthState(auth);
   const route = useRouter();
+  const routeData = route.query;
 
   //form state
   const [post, setPost] = useState({ description: "" });
@@ -28,6 +29,8 @@ export default function Journal_Comp() {
         draggable: true,
         progress: undefined,
       });
+
+      //check our user
 
       return;
     }
@@ -61,6 +64,9 @@ export default function Journal_Comp() {
   const getData = async () => {
     if (loading) return;
     if (!user) return route.push("/auth/login");
+    if (routeData.id) {
+      setPost({ description: routeData.description, id: routeData.id });
+    }
   };
 
   useEffect(() => {

@@ -4,6 +4,8 @@ import { auth } from "../../utils/firebase";
 import { useRouter } from "next/router";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
+import dogtreat from "../../utils/images/dogtreat.png";
+import Image from "next/image";
 
 export default function Login() {
   const route = useRouter();
@@ -28,11 +30,12 @@ export default function Login() {
   }, [user]);
 
   return (
-    <div className="shadow-xl mt-12 mb-20 mx-10 p-10 text-gray-700 rounded-lg flex-col flex items-center min-h-screen bg-opacity-60 backdrop-filter backdrop-blur-lg ">
+    <div className="shadow-xl mt-4 mb-20 mx-10 p-10 text-gray-700 rounded-lg flex-col flex items-center min-h-screen bg-opacity-60 backdrop-filter backdrop-blur-lg ">
       {/* <div className="flex flex-col items-center justify-center min-h-screen py-2 -mt-20 px-14 text-center"> */}
-      <h1 className="text-2xl font-bold text-center mb-20">
+      <h1 className="text-2xl font-bold text-center mb-10">
         Welcome to Chonsa, your new favourite online bullet journal!
       </h1>
+      <Image src={dogtreat} alt="dogtreat" width={100} height={100} />
       <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-nowrap">
         {/* sign in */}
         <div className="bg-lavenderLg max-w-lg mt-8 p-8 shadow-md lg:px-44 rounded-lg basis-1/2 flex-1 bg-opacity-60 backdrop-filter backdrop-blur-lg">

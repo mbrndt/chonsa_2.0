@@ -3,9 +3,17 @@ import Journal_Comp from "../components/journal_comp";
 import Message from "../components/message";
 import { useEffect, useState } from "react";
 import { db } from "../utils/firebase";
-import { collection, orderBy, query, onSnapshot } from "firebase/firestore";
+import {
+  collection,
+  orderBy,
+  query,
+  onSnapshot,
+  doc,
+  deleteDoc,
+} from "firebase/firestore";
 import { BsTrash2Fill } from "react-icons/bs";
 import { AiFillEdit } from "react-icons/ai";
+import Link from "next/link";
 
 export default function Journal({ children }) {
   //create a state for the posts
@@ -20,6 +28,12 @@ export default function Journal({ children }) {
     return unsubscribe;
   };
 
+  //delete post
+  const deletePost = async (id) => {
+    const docRef = doc(db, "posts", id);
+    await deleteDoc(docRef);
+  };
+
   useEffect(() => {
     getPosts();
   }, []);
@@ -28,7 +42,7 @@ export default function Journal({ children }) {
     <div>
       <h1 className="justify-center text-3xl flex mt-4">Journal</h1>
       <div className="flex">
-        <div className="ml-40">
+        <div className="ml-40" id="journal">
           <Journal_Comp />
         </div>
 
@@ -38,14 +52,19 @@ export default function Journal({ children }) {
             return (
               <Message key={post.id} {...post}>
                 <div className="flex gap-4 justify-end mt-8">
-                  <button className="flex items-end justify-center gap-2 py-2 text-sm">
+                  <button
+                    onClick={() => deletePost(post.id)}
+                    className="flex items-end justify-center gap-2 py-2 text-sm"
+                  >
                     <BsTrash2Fill className="text-xl" />
                     Delete
                   </button>
-                  <button className="flex items-end gap-2 py-2 text-sm">
-                    <AiFillEdit className="text-xl" />
-                    Edit
-                  </button>
+                  {/* <Link href={{ pathname: "/journal", query: post }}>
+                    <button className="flex items-end gap-2 py-2 text-sm">
+                      <AiFillEdit className="text-xl" />
+                      Edit
+                    </button>
+                  </Link> */}
                 </div>
               </Message>
             );

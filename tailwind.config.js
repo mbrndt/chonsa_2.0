@@ -6,10 +6,12 @@ module.exports = {
   ],
   theme: {
     colors: {
+      lavenderLg: "#DFDFF0",
       lavenderBg: "#E8E9F1",
       lavenderDark: "#B1B7D1",
       red: "#F25F5C",
       white: "#FFFFFF",
+      blueLg: "#C6D6EC",
       graydark: "#4B4B4B",
       graysoft: "#9B9B9B",
     },

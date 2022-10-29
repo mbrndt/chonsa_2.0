@@ -26,6 +26,7 @@ export default function Home() {
       console.log("login");
     }
   }, [user]);
+
   return (
     <div>
       <Head>

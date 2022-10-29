@@ -84,7 +84,7 @@ export default function Journal_Comp() {
               onChange={(e) =>
                 setPost({ ...post, description: e.target.value })
               }
-              className="w-full bg-lavenderBg text-red-100 p-2 outline-lavenderDark"
+              className="w-full bg-lavenderBg p-2 outline-lavenderDark"
             ></textarea>
             <p
               className={`text-gray-500 font-medium text-sm ${

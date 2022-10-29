@@ -42,7 +42,7 @@ export default function Journal({ children }) {
                     <BsTrash2Fill className="text-xl" />
                     Delete
                   </button>
-                  <button className="flex items-end  gap-2 py-2 text-sm">
+                  <button className="flex items-end gap-2 py-2 text-sm">
                     <AiFillEdit className="text-xl" />
                     Edit
                   </button>

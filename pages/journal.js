@@ -1,104 +1,57 @@
 import React from "react";
-import { auth, db } from "../utils/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { useRouter } from "next/router";
+import Journal_Comp from "../components/journal_comp";
+import Message from "../components/message";
 import { useEffect, useState } from "react";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { toast } from "react-toastify";
+import { db } from "../utils/firebase";
+import { collection, orderBy, query, onSnapshot } from "firebase/firestore";
+import { BsTrash2Fill } from "react-icons/bs";
+import { AiFillEdit } from "react-icons/ai";
 
-export default function Journal() {
-  //login
-  const [user, loading] = useAuthState(auth);
-  const route = useRouter();
+export default function Journal({ children }) {
+  //create a state for the posts
+  const [posts, setPosts] = useState([]);
 
-  //form state
-  const [post, setPost] = useState({ description: "" });
-
-  //submit post
-  const submitPost = async (e) => {
-    e.preventDefault();
-
-    //run checks for description
-    if (!post.description) {
-      toast.error("Text field is empty. Please enter a text. ✨", {
-        position: "top-center",
-        autoClose: 3000,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-
-      return;
-    }
-
-    if (post.description.length > 300) {
-      toast.error("Text is too long. Please enter a shorter text. ✨", {
-        position: "top-center",
-        autoClose: 3000,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-
-      return;
-    }
-
-    //make a new post
+  const getPosts = async () => {
     const collectionRef = collection(db, "posts");
-    await addDoc(collectionRef, {
-      ...post,
-      timestamp: serverTimestamp(),
-      user: user.uid,
-      avatar: user.photoURL,
-      username: user.displayName,
+    const q = query(collectionRef, orderBy("timestamp", "desc"));
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      setPosts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     });
-    setPost({ description: "" });
-    // return route.push("/");
-  };
-
-  const getData = async () => {
-    if (loading) return;
-    if (!user) return route.push("/auth/login");
+    return unsubscribe;
   };
 
   useEffect(() => {
-    getData();
-  }, [user, loading]);
+    getPosts();
+  }, []);
 
   return (
     <div>
-      <section className="my-20 p-12 shadow-lg rounded-lg max-w-md mx-auto bg-white">
-        <form onSubmit={submitPost}>
-          <label className="gap-4" htmlFor="content">
-            new entry:
-          </label>
-          <div>
-            <textarea
-              name="content"
-              id="content"
-              cols="30"
-              rows="10"
-              value={post.description}
-              onChange={(e) =>
-                setPost({ ...post, description: e.target.value })
-              }
-              className="w-full bg-lavenderBg text-red-100 p-2 "
-            ></textarea>
-            <p
-              className={`text-gray-500 font-medium text-sm ${
-                post.description.length > 300 ? "text-red" : ""
-              }`}
-            >
-              {post.description.length}/300
-            </p>
-          </div>
-          <button type="submit" className="w-full bg-lavenderBg rounded-lg">
-            submit
-          </button>
-        </form>
-      </section>
+      <h1 className="justify-center text-3xl flex mt-4">Journal</h1>
+      <div className="flex">
+        <div className="ml-40">
+          <Journal_Comp />
+        </div>
+
+        <div className=" my-20 p-12 shadow-lg rounded-lg max-w-max mx-auto bg-white">
+          <h2 className="text-s2xl">Older Entries:</h2>
+          {posts.map((post) => {
+            return (
+              <Message key={post.id} {...post}>
+                <div className="flex gap-4 justify-end mt-8">
+                  <button className="flex items-end justify-center gap-2 py-2 text-sm">
+                    <BsTrash2Fill className="text-xl" />
+                    Delete
+                  </button>
+                  <button className="flex items-end  gap-2 py-2 text-sm">
+                    <AiFillEdit className="text-xl" />
+                    Edit
+                  </button>
+                </div>
+              </Message>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

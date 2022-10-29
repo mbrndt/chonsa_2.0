@@ -10,6 +10,8 @@ module.exports = {
       lavenderDark: "#B1B7D1",
       red: "#F25F5C",
       white: "#FFFFFF",
+      graydark: "#4B4B4B",
+      graysoft: "#9B9B9B",
     },
     extend: {
       fontFamily: {

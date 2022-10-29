@@ -9,9 +9,9 @@ body {
   outline-color: #b1b7d1;
 }
 
-:focus {
+/* :focus {
   outline: 1px solid #b1b7d1;
-}
+} */
 
 a {
   color: inherit;

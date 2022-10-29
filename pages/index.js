@@ -13,6 +13,7 @@ import { auth } from "../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import Journal_Comp from "../components/journal_comp";
 
 export default function Home() {
   const [user, loading] = useAuthState(auth);
@@ -41,10 +42,9 @@ export default function Home() {
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-nowrap">
             <div className="basis-1/4 flex-1 text-center  p-10 rounded-xl my-10 bg-lavenderBg">
               <Calendar />
-
-              <Journal />
+              <Journal_Comp />
             </div>
-            <div className="basis-1/4 flex-1 text-center p-10 rounded-xl my-10 bg-neutral-100 bg-lavenderBg">
+            <div className="basis-1/4 flex-1 text-center p-10 rounded-xl my-10 bg-lavenderBg">
               <Taskbox />
             </div>
             <div className=" bg-lavenderDark basis-1/4 flex-1 text-center  p-10 rounded-xl my-10 bg-gradient-to-b from-neutral-100 to-transparent">
@@ -59,7 +59,7 @@ export default function Home() {
                 <Pomodoro />
               </h1>
             </div>
-            <div className=" bg-lavenderBg basis-1/4 flex-1 text-center p-10 rounded-xl my-10 bg-neutral-100">
+            <div className=" bg-lavenderBg basis-1/4 flex-1 text-center p-10 rounded-xl my-10 ">
               <MoodTracker />
               <WaterTracker />
               <Image src={lavender2} alt="lavender" width={200} height={200} />

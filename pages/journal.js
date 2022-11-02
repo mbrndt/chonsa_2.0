@@ -46,8 +46,8 @@ export default function Journal({ children }) {
           <Journal_Comp />
         </div>
 
-        <div className=" my-20 p-12 shadow-lg rounded-lg max-w-2xl mx-auto bg-white">
-          <h2 className="text-s2xl">Older Entries:</h2>
+        <div className=" my-20 p-12 shadow-lg rounded-lg mx-auto bg-white">
+          <h2 className="text-2xl">Older Entries:</h2>
           {posts.map((post) => {
             return (
               <Message key={post.id} {...post}>

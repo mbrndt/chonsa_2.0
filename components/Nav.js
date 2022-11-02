@@ -2,12 +2,20 @@ import React from "react";
 import Link from "next/link";
 import { auth } from "../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useRouter } from "next/router";
 
 import Journal from "../pages/journal";
 import Image from "next/image";
 
 export default function Nav() {
   const [user, loading] = useAuthState(auth);
+
+  const route = useRouter();
+
+  const signOut = () => {
+    auth.signOut();
+    route.push("/auth/login");
+  };
 
   return (
     <nav className="py-5 flex max-w-full justify-between bg-lavenderBg ">
@@ -20,7 +28,7 @@ export default function Nav() {
       <ul className="flex items-center gap-5 pr-16">
         {!user && (
           <Link href="/auth/login">
-            <p className="py-2 px-4 text-graydark rounded-lg font-medium ml-8">
+            <p className="py-2 px-4 text-graydark rounded-lg font-medium ml-8 w-screen justify-end flex">
               sign in
             </p>
           </Link>
@@ -41,7 +49,7 @@ export default function Nav() {
               width={50}
               height={50}
             /> */}
-            <button onClick={() => auth.signOut()}>sign out</button>
+            <button onClick={() => signOut()}>sign out</button>
 
             <button>menu</button>
           </div>

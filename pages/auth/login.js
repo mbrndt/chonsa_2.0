@@ -30,7 +30,7 @@ export default function Login() {
   }, [user, route]);
 
   return (
-    <div className="shadow-xl mt-4 mb-20 mx-10 p-10 text-gray-700 rounded-lg flex-col flex items-center min-h-screen bg-opacity-60 backdrop-filter backdrop-blur-lg ">
+    <div className="shadow-xl mt-4 mb-20 mx-10 p-10 text-gray-700 rounded-lg flex-col flex items-center bg-opacity-60 backdrop-blur-lg ">
       {/* <div className="flex flex-col items-center justify-center min-h-screen py-2 -mt-20 px-14 text-center"> */}
       <h1 className="text-2xl font-bold text-center mb-10">
         Welcome to Chonsa, your new favourite online bullet journal!
@@ -38,7 +38,7 @@ export default function Login() {
       <Image src={dogtreat} alt="dogtreat" width={100} height={100} />
       <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-nowrap">
         {/* sign in */}
-        <div className="bg-lavenderLg max-w-lg mt-8 p-8 shadow-md lg:px-44 rounded-lg basis-1/2 flex-1 bg-opacity-60 backdrop-filter backdrop-blur-lg">
+        <div className="bg-lavenderLg max-w-lg mt-8 p-8 shadow-md lg:px-44 rounded-lg basis-1/2 bg-opacity-60 backdrop-filter backdrop-blur-lg">
           <p className="text-center text-2xl pb-6">Sign In</p>
           <form action="" className="flex-row ">
             <p className="pt-2 pb-1">email:</p>
@@ -46,8 +46,6 @@ export default function Login() {
               type="text"
               id="email"
               placeholder="email"
-              rounded-sm
-              border-solid
               className="pl-2"
             />
             <p className="pb-1 pt-4">password:</p>

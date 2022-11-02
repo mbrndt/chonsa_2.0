@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 export default function Layout({ children }) {
   return (
-    <div className="font-josefin min-h-full">
+    <div className="font-josefin">
       <Nav />
       <main>{children}</main>
       <Footer />

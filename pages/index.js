@@ -23,7 +23,7 @@ export default function Home() {
     if (user) {
       route.push("/");
     } else {
-      console.log("login");
+      route.push("/auth/login");
     }
   }, [user, route]);
 
@@ -40,19 +40,19 @@ export default function Home() {
 
       <main
         id="home"
-        className="max-w-max mx-5 sm:text-xl text-2xl lg:text-base "
+        className="max-w-max mx-5 sm:text-xl text-2xl lg:text-base lg:mx-10 lg:px-10"
       >
-        <section className=" mt-5">
-          <div className="flex flex-row gap-10 py-10 flex-wrap lg:flex-nowrap ">
-            <div className="basis-1/4 w-24 min-w-min text-center p-10 rounded-xl my-10 bg-lavenderDark">
+        <section className="mt-5 grow-0">
+          <div className="flex flex-row gap-10 py-10 flex-wrap justify-center md:flex-shrink-0 lg:flex-nowrap">
+            <div className="basis-1/4 w-24 min-w-min text-center p-10 rounded-xl my-10 bg-lavenderDark ">
               <Calendar />
-              <Journal_Comp className="max-w-lg" />
+              <Journal_Comp className="max-w-md" />
             </div>
             <div className="basis-1/4 min-w-min text-center p-10 rounded-xl my-10 bg-lavenderBg">
               <Taskbox />
             </div>
             <div className=" bg-lavenderDark min-w-min basis-1/4 text-center p-10 rounded-xl my-10 bg-gradient-to-b from-neutral-100 to-transparent">
-              <h1 className="leading-none flex pt-8 pb-2 justify-center flex-wrap">
+              <h1 className="flex pt-8 pb-2 justify-center flex-wrap">
                 <Image
                   src={lavender1}
                   alt="lavender clouds in front of a blue sky"

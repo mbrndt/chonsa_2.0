@@ -28,7 +28,7 @@ export default function Nav() {
       <ul className="flex items-center gap-5 pr-16">
         {!user && (
           <Link href="/auth/login">
-            <p className="py-2 px-4 text-graydark rounded-lg font-medium ml-8 w-screen justify-end flex">
+            <p className="py-2 px-4 text-graydark rounded-lg font-medium ml-8 flex">
               sign in
             </p>
           </Link>

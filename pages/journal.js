@@ -39,7 +39,7 @@ export default function Journal({ children }) {
   }, []);
 
   return (
-    <div className="sm:text-xl lg:text-base ">
+    <div className="sm:text-xl text-2xl lg:text-base ">
       <h1 className="justify-center text-3xl flex mt-4 ">Journal</h1>
       <div className="flex flex-wrap">
         <div className="ml-40" id="journal">

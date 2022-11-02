@@ -38,7 +38,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main id="home" className="max-w-max mx-5">
+      <main
+        id="home"
+        className="max-w-max mx-5 sm:text-xl text-2xl lg:text-base "
+      >
         <section className=" mt-5">
           <div className="flex flex-row gap-10 py-10 flex-wrap lg:flex-nowrap ">
             <div className="basis-1/4 w-24 min-w-min text-center p-10 rounded-xl my-10 bg-lavenderDark">

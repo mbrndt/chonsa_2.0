@@ -35,7 +35,7 @@ export default function Journal_Comp() {
       return;
     }
 
-    if (post.description.length > 300) {
+    if (post.description.length > 1000) {
       toast.error("Text is too long. Please enter a shorter text. ✨", {
         position: "top-center",
         autoClose: 3000,
@@ -84,8 +84,8 @@ export default function Journal_Comp() {
             <textarea
               name="content"
               id="content"
-              cols="30"
-              rows="10"
+              cols="65"
+              rows="100"
               value={post.description}
               onChange={(e) =>
                 setPost({ ...post, description: e.target.value })
@@ -94,10 +94,10 @@ export default function Journal_Comp() {
             ></textarea>
             <p
               className={`text-gray-500 font-medium text-sm ${
-                post.description.length > 300 ? "text-red" : ""
+                post.description.length > 1000 ? "text-red" : ""
               }`}
             >
-              {post.description.length}/300
+              {post.description.length}/1000
             </p>
           </div>
           <button type="submit" className="w-full bg-lavenderBg rounded-lg">

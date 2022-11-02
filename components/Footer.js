@@ -33,7 +33,9 @@ function Footer() {
           <AiFillYoutube className="h-8 w-8 cursor-pointer text-green-800" />
         </a>
       </div>
-      <h1 className=" mr-16">2022, copyright mareike brandt</h1>
+      <h1 className=" mr-16">
+        Copyright © 2022 Mareike Brandt. All rights reserved.
+      </h1>
     </div>
   );
 }

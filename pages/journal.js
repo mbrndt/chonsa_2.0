@@ -41,12 +41,12 @@ export default function Journal({ children }) {
   return (
     <div className="sm:text-xl text-2xl lg:text-base ">
       <h1 className="justify-center text-3xl flex mt-4 ">Journal</h1>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap lg:flex-nowrap">
         <div className="ml-40" id="journal">
           <Journal_Comp />
         </div>
 
-        <div className=" my-20 p-12 shadow-lg rounded-lg mx-auto bg-white">
+        <div className=" my-20 ml-40 mr-20 p-12 shadow-lg rounded-lg mx-auto bg-white">
           <h2 className="text-2xl">Older Entries:</h2>
           {posts.map((post) => {
             return (

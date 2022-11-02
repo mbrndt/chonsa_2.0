@@ -20,9 +20,7 @@ export default function Home() {
   const route = useRouter();
 
   useEffect(() => {
-    if (user) {
-      route.push("/");
-    } else {
+    if (!user) {
       route.push("/auth/login");
     }
   }, [user, route]);
@@ -40,10 +38,10 @@ export default function Home() {
 
       <main
         id="home"
-        className="max-w-max mx-5 sm:text-xl text-2xl lg:text-base lg:mx-10 lg:px-10"
+        className=" mx-5 sm:text-xl text-2xl lg:text-base lg:mx-10 lg:px-10"
       >
-        <section className="mt-5 grow-0">
-          <div className="flex flex-row gap-10 py-10 flex-wrap justify-center md:flex-shrink-0 lg:flex-nowrap">
+        <section>
+          <div className="flex gap-10 py-10 flex-wrap justify-center md:flex-shrink-0 lg:flex-nowrap">
             <div className="basis-1/4 w-24 min-w-min text-center p-10 rounded-xl my-10 bg-lavenderDark ">
               <Calendar />
               <Journal_Comp className="max-w-md" />

@@ -39,7 +39,7 @@ export default function Journal({ children }) {
   }, []);
 
   return (
-    <div className="sm:text-xl lg:text-base sm:">
+    <div className="sm:text-xl lg:text-base ">
       <h1 className="justify-center text-3xl flex mt-4 ">Journal</h1>
       <div className="flex flex-wrap">
         <div className="ml-40" id="journal">
@@ -54,17 +54,11 @@ export default function Journal({ children }) {
                 <div className="flex gap-4 justify-end mt-8">
                   <button
                     onClick={() => deletePost(post.id)}
-                    className="flex items-end justify-center gap-2 py-2 text-sm sm:text-xl"
+                    className="flex items-end justify-center gap-2 py-2 md:text-sm sm:text-xl"
                   >
                     <BsTrash2Fill className="text-xl" />
                     Delete
                   </button>
-                  {/* <Link href={{ pathname: "/journal", query: post }}>
-                    <button className="flex items-end gap-2 py-2 text-sm">
-                      <AiFillEdit className="text-xl" />
-                      Edit
-                    </button>
-                  </Link> */}
                 </div>
               </Message>
             );

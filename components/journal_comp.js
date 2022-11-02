@@ -39,9 +39,6 @@ export default function Journal_Comp() {
       toast.error("Text is too long. Please enter a shorter text. ✨", {
         position: "top-center",
         autoClose: 3000,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
         progress: undefined,
       });
 
@@ -73,7 +70,7 @@ export default function Journal_Comp() {
 
   return (
     <div className="sm:text-xl lg:text-base">
-      <section className="my-20 p-12 shadow-lg rounded-lg  max-w-max mx-auto bg-white ">
+      <section className="my-20 p-12 shadow-lg rounded-lg max-w-max mx-auto bg-white ">
         <form onSubmit={submitPost}>
           <label className="gap-4" htmlFor="content">
             new entry:
@@ -86,7 +83,7 @@ export default function Journal_Comp() {
               onChange={(e) =>
                 setPost({ ...post, description: e.target.value })
               }
-              className="w-80 bg-lavenderBg p-2 outline-lavenderDark h-60"
+              className="w-60 bg-lavenderBg p-2 outline-lavenderDark h-60"
             ></textarea>
             <p
               className={`text-gray-500 font-medium text-sm ${

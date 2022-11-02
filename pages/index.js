@@ -38,32 +38,37 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main id="home" className="px-10 md:px-20 lg:px-40">
-        <section className="min-h-screen mt-5">
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-nowrap">
-            <div className="basis-1/4 flex-1 text-center  p-10 rounded-xl my-10 bg-lavenderDark">
+      <main id="home" className="max-w-max mx-5">
+        <section className=" mt-5">
+          <div className="flex flex-row gap-10 py-10 flex-wrap lg:flex-nowrap ">
+            <div className="basis-1/4 w-24 min-w-min text-center p-10 rounded-xl my-10 bg-lavenderDark">
               <Calendar />
-              <Journal_Comp />
+              <Journal_Comp className="max-w-lg" />
             </div>
-            <div className="basis-1/4 flex-1 text-center p-10 rounded-xl my-10 bg-lavenderBg">
+            <div className="basis-1/4 min-w-min text-center p-10 rounded-xl my-10 bg-lavenderBg">
               <Taskbox />
             </div>
-            <div className=" bg-lavenderDark basis-1/4 flex-1 text-center  p-10 rounded-xl my-10 bg-gradient-to-b from-neutral-100 to-transparent">
-              <h1 className="leading-none text-amber-400 flex pt-8 pb-2 justify-center flex-wrap">
+            <div className=" bg-lavenderDark min-w-min basis-1/4 text-center p-10 rounded-xl my-10 bg-gradient-to-b from-neutral-100 to-transparent">
+              <h1 className="leading-none flex pt-8 pb-2 justify-center flex-wrap">
                 <Image
                   src={lavender1}
-                  alt="lavender"
-                  width={200}
-                  height={200}
+                  alt="lavender clouds in front of a blue sky"
+                  width="auto"
+                  height="auto"
                 />
                 <Collections />
                 <Pomodoro />
               </h1>
             </div>
-            <div className=" bg-lavenderBg basis-1/4 flex-1 text-center p-10 rounded-xl my-10 ">
+            <div className=" bg-lavenderBg basis-1/4 min-w-min text-center p-10 rounded-xl my-10 ">
               <MoodTracker />
               <WaterTracker />
-              <Image src={lavender2} alt="lavender" width={200} height={200} />
+              <Image
+                src={lavender2}
+                alt="table with office supplies like a laptop in front of a screen, a plant, a mousepad with mouse"
+                width="auto"
+                height="auto"
+              />
             </div>
           </div>
         </section>

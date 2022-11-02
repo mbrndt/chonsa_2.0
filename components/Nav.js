@@ -10,7 +10,7 @@ export default function Nav() {
   const [user, loading] = useAuthState(auth);
 
   return (
-    <nav className="py-5 flex justify-between bg-lavenderBg min-w-screen">
+    <nav className="py-5 flex max-w-full justify-between bg-lavenderBg ">
       <Link href="/">
         <button className=" pl-72 text-3xl font-josefin font-medium flex">
           chonsa{" "}
@@ -20,9 +20,9 @@ export default function Nav() {
       <ul className="flex items-center gap-5 pr-16">
         {!user && (
           <Link href="/auth/login">
-            <a className="py-2 px-4  bg-cyan-500 text-graydark rounded-lg font-medium ml-8">
+            <p className="py-2 px-4 text-graydark rounded-lg font-medium ml-8">
               sign in
-            </a>
+            </p>
           </Link>
         )}
 
@@ -32,7 +32,7 @@ export default function Nav() {
               <button>journal</button>
             </Link>
             <button>change theme</button>
-
+            {/* 
             <Image
               className="w-12 rounded-full"
               // src={user.photoURL}
@@ -40,7 +40,7 @@ export default function Nav() {
               alt="user photo"
               width={50}
               height={50}
-            />
+            /> */}
             <button onClick={() => auth.signOut()}>sign out</button>
 
             <button>menu</button>

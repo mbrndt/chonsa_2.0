@@ -25,7 +25,7 @@ export default function Home() {
     } else {
       console.log("login");
     }
-  }, [user]);
+  }, [user, route]);
 
   return (
     <div>

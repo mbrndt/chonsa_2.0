@@ -32,10 +32,14 @@ export default function Nav() {
               <button>journal</button>
             </Link>
             <button>change theme</button>
-            <img
+
+            <Image
               className="w-12 rounded-full"
-              src={user.photoURL}
+              // src={user.photoURL}
+              src={user?.photourl}
               alt="user photo"
+              width={50}
+              height={50}
             />
             <button onClick={() => auth.signOut()}>sign out</button>
 

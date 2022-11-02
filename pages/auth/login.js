@@ -27,7 +27,7 @@ export default function Login() {
     } else {
       console.log("login");
     }
-  }, [user]);
+  }, [user, route]);
 
   return (
     <div className="shadow-xl mt-4 mb-20 mx-10 p-10 text-gray-700 rounded-lg flex-col flex items-center min-h-screen bg-opacity-60 backdrop-filter backdrop-blur-lg ">

@@ -61,17 +61,15 @@ export default function Journal_Comp() {
     // return route.push("/");
   };
 
-  const getData = async () => {
-    if (loading) return;
-    if (!user) return route.push("/auth/login");
-    if (routeData.id) {
-      setPost({ description: routeData.description, id: routeData.id });
-    }
-  };
-
   useEffect(() => {
-    getData();
-  }, [user, loading]);
+    const getData = async () => {
+      if (loading) return;
+      if (!user) return route.push("/auth/login");
+      if (routeData.id) {
+        setPost({ description: routeData.description, id: routeData.id });
+      }
+    };
+  }, [user, loading, route, routeData.description, routeData.id]);
 
   return (
     <div>

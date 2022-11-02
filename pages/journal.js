@@ -39,7 +39,7 @@ export default function Journal({ children }) {
   }, []);
 
   return (
-    <div>
+    <div className="sm:text-xl lg:text-base sm:">
       <h1 className="justify-center text-3xl flex mt-4 ">Journal</h1>
       <div className="flex flex-wrap">
         <div className="ml-40" id="journal">
@@ -54,7 +54,7 @@ export default function Journal({ children }) {
                 <div className="flex gap-4 justify-end mt-8">
                   <button
                     onClick={() => deletePost(post.id)}
-                    className="flex items-end justify-center gap-2 py-2 text-sm"
+                    className="flex items-end justify-center gap-2 py-2 text-sm sm:text-xl"
                   >
                     <BsTrash2Fill className="text-xl" />
                     Delete

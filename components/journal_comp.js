@@ -72,8 +72,8 @@ export default function Journal_Comp() {
   }, [user, loading, route, routeData.description, routeData.id]);
 
   return (
-    <div>
-      <section className="my-20 p-12 shadow-lg rounded-lg max-w-max mx-auto bg-white">
+    <div className="sm:text-xl lg:text-base">
+      <section className="my-20 p-12 shadow-lg rounded-lg  max-w-max mx-auto bg-white ">
         <form onSubmit={submitPost}>
           <label className="gap-4" htmlFor="content">
             new entry:
@@ -82,13 +82,11 @@ export default function Journal_Comp() {
             <textarea
               name="content"
               id="content"
-              cols="65"
-              rows="100"
               value={post.description}
               onChange={(e) =>
                 setPost({ ...post, description: e.target.value })
               }
-              className="w-full bg-lavenderBg p-2 outline-lavenderDark"
+              className="w-80 bg-lavenderBg p-2 outline-lavenderDark h-60"
             ></textarea>
             <p
               className={`text-gray-500 font-medium text-sm ${

@@ -6,6 +6,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
 import dogtreat from "../../utils/images/dogtreat.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Login() {
   const route = useRouter();
@@ -39,7 +40,7 @@ export default function Login() {
       <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-nowrap">
         {/* sign in */}
         <div className="bg-lavenderLg max-w-lg mt-8 p-8 shadow-md lg:px-44 rounded-lg basis-1/2 bg-opacity-60 backdrop-filter backdrop-blur-lg">
-          <p className="text-center text-2xl pb-6">Sign In</p>
+          <p className="text-center text-2xl pb-6">Log In</p>
           <form action="" className="flex-row ">
             <p className="pt-2 pb-1">email:</p>
             <input
@@ -82,9 +83,11 @@ export default function Login() {
         <div className="bg-blueLg max-w-lg mt-10 p-10 pb28 shadow-md rounded-lg basis-1/2 flex-1 bg-opacity-60 backdrop-filter backdrop-blur-lg">
           <p className="mt-4 text-center text-2xl pb-6">Sign Up</p>
 
-          <button className="w-80 p-2 bg-white rounded-lg shadow-sm hover:text-lavenderDark bg-opacity-60 backdrop-filter backdrop-blur-lg">
-            create new account with your email address
-          </button>
+          <Link href="/auth/signup">
+            <button className="w-80 p-2 bg-white rounded-lg shadow-sm hover:text-lavenderDark bg-opacity-60 backdrop-filter backdrop-blur-lg">
+              create new account with your email address
+            </button>
+          </Link>
           <button
             onClick={GoogleLogin}
             className="rounded-lg flex mt-10 ml-14 mb-4 text-graydark hover:text-lavenderDark"

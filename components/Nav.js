@@ -29,7 +29,7 @@ export default function Nav() {
         {!user && (
           <Link href="/auth/login">
             <p className="py-2 px-4 text-graydark rounded-lg font-medium ml-8 flex">
-              sign in
+              login / signup
             </p>
           </Link>
         )}

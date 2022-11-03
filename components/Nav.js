@@ -18,7 +18,7 @@ export default function Nav() {
   };
 
   return (
-    <nav className="py-5 flex max-w-full justify-between bg-lavenderBg ">
+    <nav className="py-5 flex justify-between bg-lavenderBg ">
       <Link href="/">
         <button className=" pl-72 text-3xl font-josefin font-medium flex">
           chonsa{" "}

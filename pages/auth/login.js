@@ -77,16 +77,27 @@ export default function Login() {
               <FcGoogle className="text-2xl ml-2" />
             </button>
           </div>
+          <span>
+            Not a member yet?{" "}
+            <Link
+              className="text-graydark cursor-pointer underline"
+              href="/auth/signup"
+            >
+              Sign up for free here!
+            </Link>
+          </span>
         </div>
 
         {/* sign up */}
-        <div className="bg-blueLg max-w-lg mt-10 p-10 pb28 shadow-md rounded-lg basis-1/2 flex-1 bg-opacity-60 backdrop-filter backdrop-blur-lg">
+        {/* <div className="bg-blueLg max-w-lg mt-10 p-10 pb28 shadow-md rounded-lg basis-1/2 flex-1 bg-opacity-60 backdrop-filter backdrop-blur-lg">
           <p className="mt-4 text-center text-2xl pb-6">Sign Up</p>
 
-          <Link href="/auth/signup">
-            <button className="w-80 p-2 bg-white rounded-lg shadow-sm hover:text-lavenderDark bg-opacity-60 backdrop-filter backdrop-blur-lg">
-              create new account with your email address
-            </button>
+          
+            <Link href="/auth/signup"><button
+            className="w-80 p-2 bg-white rounded-lg shadow-sm hover:text-lavenderDark bg-opacity-60 backdrop-filter backdrop-blur-lg"
+          >
+            create new account with your email address
+          </button>
           </Link>
           <button
             onClick={GoogleLogin}
@@ -96,7 +107,7 @@ export default function Login() {
             or sign up using these:
             <FcGoogle className="text-2xl ml-2" />
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -39,7 +39,7 @@ export default function Login() {
       <Image src={dogtreat} alt="dogtreat" width={100} height={100} />
       <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-nowrap">
         {/* sign in */}
-        <div className="bg-lavenderLg max-w-lg mt-8 p-8 shadow-md lg:px-44 rounded-lg basis-1/2 bg-opacity-60 backdrop-filter backdrop-blur-lg">
+        <div className="bg-lavenderLg max-w-lg p-8 shadow-md lg:px-44 rounded-lg basis-1/2 bg-opacity-60 backdrop-filter backdrop-blur-lg">
           <p className="text-center text-2xl pb-6">Log In</p>
           <form action="" className="flex-row ">
             <p className="pt-2 pb-1">email:</p>
@@ -61,7 +61,7 @@ export default function Login() {
               forgot password?
             </button>
 
-            <button className="mt-8 w-40 bg-lavenderDark rounded-lg shadow-sm hover:text-white  bg-opacity-60 backdrop-filter backdrop-blur-lg">
+            <button className="mt-8 w-40 bg-lavenderDark rounded-lg shadow-sm hover:text-graysoft  bg-opacity-60 backdrop-filter backdrop-blur-lg">
               login
             </button>
           </form>
@@ -70,22 +70,22 @@ export default function Login() {
             {" "}
             <button
               onClick={GoogleLogin}
-              className="rounded-lg -ml-4 flex mt-14 mb-4 text-graydark hover:text-graysoft"
+              className="rounded-lg -ml-4 flex mt-8 mb-4 text-graydark hover:text-graysoft"
             >
               {" "}
               or login using these:
               <FcGoogle className="text-2xl ml-2" />
             </button>
           </div>
-          <span>
+          <div className="mt-8">
             Not a member yet?{" "}
             <Link
-              className="text-graydark cursor-pointer underline"
+              className="text-graydark cursor-pointer underline hover:text-graysoft"
               href="/auth/signup"
             >
               Sign up for free here!
             </Link>
-          </span>
+          </div>
         </div>
 
         {/* sign up */}

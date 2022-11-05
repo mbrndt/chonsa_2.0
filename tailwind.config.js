@@ -14,6 +14,8 @@ module.exports = {
       blueLg: "#C6D6EC",
       graydark: "#4B4B4B",
       graysoft: "#9B9B9B",
+      black: "#000000",
+      cream: "#F9F9F9",
     },
     extend: {
       fontFamily: {

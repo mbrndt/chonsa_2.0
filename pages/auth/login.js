@@ -32,7 +32,6 @@ export default function Login() {
 
   return (
     <div className="shadow-xl mt-4 mb-20 mx-10 p-10 text-gray-700 rounded-lg flex-col flex items-center bg-opacity-60 backdrop-blur-lg ">
-      {/* <div className="flex flex-col items-center justify-center min-h-screen py-2 -mt-20 px-14 text-center"> */}
       <h1 className="text-2xl font-bold text-center mb-10">
         Welcome to Chonsa, your new favourite online bullet journal!
       </h1>

@@ -2,8 +2,22 @@ import { ArrowLeft } from "tabler-icons-react";
 import Link from "next/link";
 import Image from "next/image";
 import woman from "../../utils/images/women.png";
+import { useFormik } from "formik";
 
 export default function SignUp() {
+  //Formik Logics
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      password: "",
+      terms: "",
+    },
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
+
   return (
     <div className=" shadow-xl mt-4 mb-40 mx-10 p-10 text-gray-700 rounded-lg flex-col flex items-center bg-opacity-60 backdrop-blur-lg ">
       <div className="flex items-start ">
@@ -44,6 +58,20 @@ export default function SignUp() {
                 type="email"
                 name="email"
                 placeholder="Enter your email"
+              />
+            </div>
+            <div className="mt-6">
+              <label
+                className="block text-sm pb-2 font-bold"
+                htmlFor="password"
+              >
+                Password
+              </label>
+              <input
+                className="border-2 border-graysoft text-sm p-2 rounded-md w-1/2 focus:outline-none focus:ring focus:ring-lavenderDark"
+                type="password"
+                name="password"
+                placeholder="Enter your strong password"
               />
             </div>
             <div className="mt-6">

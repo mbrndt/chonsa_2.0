@@ -5,6 +5,7 @@ import Image from "next/image";
 import { images } from "../../constants";
 import { useFormik } from "formik";
 import { TimedImage } from "react-timed-image";
+import ChangingPicture from "../../components/changingPicture";
 
 export default function SignUp() {
   const imageArray = [
@@ -121,7 +122,7 @@ export default function SignUp() {
             </button>
           </div>
           <div className="flex items-center mr-10">
-            <Image src={image} height={200} width={200} alt=".." />
+            <ChangingPicture />
           </div>
         </form>
       </div>

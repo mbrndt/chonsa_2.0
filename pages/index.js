@@ -14,6 +14,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Journal_Comp from "../components/journal_comp";
+import ChangingPicture from "../components/changingPicture";
 
 export default function Home() {
   const [user, loading] = useAuthState(auth);
@@ -48,6 +49,7 @@ export default function Home() {
             </div>
             <div className="basis-1/4 min-w-min text-center p-10 rounded-xl my-10 bg-lavenderBg">
               <Taskbox />
+              <ChangingPicture />
             </div>
             <div className=" bg-lavenderDark min-w-min basis-1/4 text-center p-10 rounded-xl my-10 bg-gradient-to-b from-neutral-100 to-transparent">
               <h1 className="flex pt-8 pb-2 justify-center flex-wrap">

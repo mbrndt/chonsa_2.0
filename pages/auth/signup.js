@@ -1,10 +1,31 @@
 import { ArrowLeft } from "tabler-icons-react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import woman from "../../utils/images/women.png";
+import { images } from "../../constants";
 import { useFormik } from "formik";
+import { TimedImage } from "react-timed-image";
 
 export default function SignUp() {
+  const imageArray = [
+    images.christmasTree,
+    images.girlStanding,
+    images.hotChoco,
+    images.snowman,
+  ];
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      setCount((count) => count + 1);
+    }, 3600000);
+
+    return () => clearInterval(timerId);
+  }, []);
+
+  const image = imageArray[count % imageArray.length];
+
   //Formik Logics
   const formik = useFormik({
     initialValues: {
@@ -100,23 +121,9 @@ export default function SignUp() {
             </button>
           </div>
           <div className="flex items-center mr-10">
-            <Image
-              src={woman}
-              className="flex"
-              width={200}
-              height={200}
-              alt="cartoon woman sitting by the fire looking relaxed with staming cup in her hand, a cat by her feet and a burning fireplace behind her"
-            />{" "}
+            <Image src={image} height={200} width={200} alt=".." />
           </div>
         </form>
-      </div>
-      <div className="text-sm text-lavenderLg">
-        {" "}
-        Illustration by{" "}
-        <a href="https://icons8.com/illustrations/author/RogqKjMRAQ79">
-          xopolin
-        </a>{" "}
-        from <a href="https://icons8.com/illustrations">Ouch!</a>
       </div>
     </div>
   );
